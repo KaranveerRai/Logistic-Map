@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+			
+# parameters
+a = 4; 
+x0 = 0.6; 
+nsteps = 100;
+
+# init
+x = np.zeros( nsteps ); 
+x[0] = x0;
+
+# run simulation
+for ii in np.arange(1,nsteps): 
+    x[ii] = a * x[ii-1] * ( 1 - x[ii-1] )
+    
+    print(x)
+
+# plot results
+plt.plot( x ); 
+plt.xlabel( 'Time steps' ); 
+plt.ylabel( 'x' )
